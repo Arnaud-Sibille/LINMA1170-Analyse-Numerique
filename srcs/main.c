@@ -40,7 +40,7 @@ double	*ft_solve(double *points, int m, int n)
 	return (x);
 }
 
-/*
+
 int	main(int argc, char **argv)
 {
 	int		m;
@@ -75,4 +75,4 @@ int	main(int argc, char **argv)
 	free(x);
 	return (0);
 }
-*/
+

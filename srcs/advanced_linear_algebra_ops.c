@@ -27,7 +27,10 @@ void	ft_solve_triang_sys(double *R, double *x, double *v, int n)
 {
 	for (int i = n - 1; i >= 0; i--)
 	{
-		x[i] = v[j];
+		x[i] = v[i];
+		for (int j = i + 1; j < n; j++)
+			x[i] -= R[i + j * n] * x[j];
+		x[i] /= R[i + n * i];
 	}
 }
 
