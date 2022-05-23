@@ -17,5 +17,9 @@ void	ft_mat_times_reel(double alpha, double *mat1, double *new_mat, int m, int n
 void	ft_mat_product(double *mat1, double *mat2, double *new_mat, int m, int n, int p);
 void	ft_transp(double *mat1, double *new_mat, int m, int n);
 
+//advanced_linear_algebra_ops
+void	ft_qr_fact(double *A, double *Q, double *R, int m, int n);
+void	ft_solve_triang_sys(double *R, double *x, double *v, int n);
+
 //prints
 void	ft_print_mat(double *mat, int m, int n);

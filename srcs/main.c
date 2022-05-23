@@ -2,18 +2,6 @@
 
 #include "devoir1.h"
 
-//modified Gram-Schmidt
-void	ft_qr_fact(double *A, double *Q, double *R, int m, int n)
-{
-
-}
-
-//solve R * x = v with R an upper triangular matrix n x n
-void	ft_solve_triang_sys(double *R, double *x, double *v, int n)
-{
-
-}
-
 void	ft_solve_LS(double *A, double *x, double *b, int m, int n)
 {
 	double	*Q	= calloc(m * n, sizeof(double));
@@ -52,6 +40,7 @@ double	*ft_solve(double *points, int m, int n)
 	return (x);
 }
 
+/*
 int	main(int argc, char **argv)
 {
 	int		m;
@@ -86,3 +75,4 @@ int	main(int argc, char **argv)
 	free(x);
 	return (0);
 }
+*/
