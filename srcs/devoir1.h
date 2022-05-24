@@ -9,7 +9,7 @@
 double	*ft_file_to_mat(char *file_name, int *m);
 void	ft_vec_to_file(char *file_name, double *v, int m);
 void	ft_check_file_name(char *name);
-char	*output_name(char *inp_name);
+char	*ft_output_name(char *inp_name);
 
 //linear_algebra_ops
 void	ft_mat_sum(double *mat1, double *mat2, double *new_mat, int m, int n);

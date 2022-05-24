@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 3 || argc > 4)
 	{
-		dprintf(2, "Please execute as follow: ./mon_executable n fichier.in fichier.out\n");
+		dprintf(2, "Please execute as follow: \"./devoir1 n fichier.in\" or \"./devoir1 n fichier.in fichier.out\"\n");
 		return (1);
 	}
 	ft_check_file_name(argv[2]);
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	}
 	x = ft_solve(points, m, n);
 	if (argc == 3)
-		outfile = output_name(argv[2]);
+		outfile = ft_output_name(argv[2]);
 	else
 		outfile = argv[3];
 	ft_vec_to_file(outfile, x, n);

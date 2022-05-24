@@ -48,7 +48,7 @@ void	ft_check_file_name(char *name)
 	}
 }
 
-char	*output_name(char *inp_name)
+char	*ft_output_name(char *inp_name)
 {
 	int		out_len		= strlen(inp_name) + 1;
 	char	*out_name	= calloc(out_len, sizeof(char));
@@ -75,7 +75,7 @@ int main()
 	printf("A of dimensions %d x %d:\n", m, n);
 	ft_print_mat(A, m, n);
 
-	outfile = output_name(inp_name);
+	outfile = ft_output_name(inp_name);
 	ft_vec_to_file(outfile, A, m * n);
 
 	free(outfile);

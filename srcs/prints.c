@@ -1,6 +1,6 @@
 #include "devoir1.h"
 
-//prints a matrix m x n expressed column major storing
+//prints a matrix m x n expressed in column major storing
 //used for tests
 void	ft_print_mat(double *mat, int m, int n)
 {
