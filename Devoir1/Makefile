@@ -8,7 +8,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-${NAME}: ${OBJS} ${MAINOBJ}
+${NAME}: ${OBJS}
 	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 	
 all: ${NAME}
