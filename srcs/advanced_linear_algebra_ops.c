@@ -20,21 +20,22 @@ void	ft_qr_fact(double *A, double *Q, double *R, int m, int n)
 			   ft_mat_sum(V + j * m, temp, V + j * m, m, 1);		
 		   }
 	   }
+	   free(V);
+	   free(temp);
 }
 
-//solve R * x = v with R an upper triangular matrix n x n
-void	ft_solve_triang_sys(double *R, double *x, double *v, int n)
+double	*ft_vec_to_vander(double *abs, int m, int n)
 {
-	for (int i = n - 1; i >= 0; i--)
-	{
-		x[i] = v[i];
-		for (int j = i + 1; j < n; j++)
-			x[i] -= R[i + j * n] * x[j];
-		x[i] /= R[i + n * i];
-	}
+	double	*A	= calloc(m * n, sizeof(double));
+
+	for (int i = 0; i < m; i++)
+		for (int j = 0; j < n; j++)
+			A[i + j * m] = pow(abs[i], j);
+	return (A);
 }
 
 /*
+//test 
 int main()
 {
 	int	m		= 5;

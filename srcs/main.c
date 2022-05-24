@@ -2,6 +2,18 @@
 
 #include "devoir1.h"
 
+//solve R * x = v with R an upper triangular matrix n x n
+void	ft_solve_triang_sys(double *R, double *x, double *v, int n)
+{
+	for (int i = n - 1; i >= 0; i--)
+	{
+		x[i] = v[i];
+		for (int j = i + 1; j < n; j++)
+			x[i] -= R[i + j * n] * x[j];
+		x[i] /= R[i + n * i];
+	}
+}
+
 void	ft_solve_LS(double *A, double *x, double *b, int m, int n)
 {
 	double	*Q	= calloc(m * n, sizeof(double));
@@ -19,16 +31,6 @@ void	ft_solve_LS(double *A, double *x, double *b, int m, int n)
 	free(v);
 }
 
-double	*ft_vec_to_vander(double *abs, int m, int n)
-{
-	double	*A	= calloc(m * n, sizeof(double));
-
-	for (int i = 0; i < m; i++)
-		for (int j = 0; j < n; j++)
-			A[i + j * m] = pow(abs[i], j);
-	return (A);
-}
-
 double	*ft_solve(double *points, int m, int n)
 {
 	double	*A	= ft_vec_to_vander(points, m, n);
@@ -39,7 +41,6 @@ double	*ft_solve(double *points, int m, int n)
 	free(A);
 	return (x);
 }
-
 
 int	main(int argc, char **argv)
 {
@@ -59,7 +60,7 @@ int	main(int argc, char **argv)
 	n = atoi(argv[1]);
 	if (n < 0 || n > m)
 	{
-		dprintf(2, "n (first argument) must respect 0 <= n <= m, where m is the number of points of the input file.\n");
+		dprintf(2, "First argument n must respect 0 <= n <= m, where m is the number of points of the input file.\n");
 		return (2);
 	}
 	x = ft_solve(points, m, n);
@@ -75,4 +76,3 @@ int	main(int argc, char **argv)
 	free(x);
 	return (0);
 }
-
